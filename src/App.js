@@ -1,9 +1,22 @@
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import StartTask from './components/StartTask';
+
 function App() {
   return (
     <div className="App">
-      <h3>hola</h3>
+      <Router>
+        <Switch>
+          <Route exact path="/start-task" component={StartTask} />
+        </Switch>
+      </Router>
+
     </div>
   );
 }
