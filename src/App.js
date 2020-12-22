@@ -1,9 +1,13 @@
 import './App.css';
+import SelectTime from './SelectTime';
+import { BrowserRouter as Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h3>hola</h3>
+      <Route path='/select'>
+        <SelectTime />
+      </Route>
     </div>
   );
 }
