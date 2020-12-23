@@ -20,13 +20,18 @@ const useStyles = makeStyles((theme) => ({
         color: '#ffa62b',
         // border: '2px solid white',
         marginTop: '20px',
-        width: '90%'
+        width: '90%',
+        [theme.breakpoints.up('sm')] : {
+            flexDirection: 'column',
+            maxWidth: '400px',
+        }
     },
     containerRandom: {
         display: 'flex',
         justifyContent: 'center',
         position: 'fixed',
-        bottom: 0
+        bottom: 0,
+
     },
     containerNameTask: {
         display: 'flex',
@@ -43,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         // background: 'white',
         width: '30%',   
+        [theme.breakpoints.up('sm')] : {
+            width: '100%', 
+            marginTop: '5px'
+        }
     },
     button: {
         background: 'white',
