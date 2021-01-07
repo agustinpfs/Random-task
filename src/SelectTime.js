@@ -3,12 +3,16 @@ import React, { useState } from "react";
 function SelectTime() {
 
     const [newTime, setNewTime] = useState('00:00');
+    const [input, setInput] = useState('')
+
     const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
 
-    const updateNewTime = e => setNewTime(e.target.value); //cambio al estado con lo que tipea el user
+    // const updateNewTime = e => setNewTime(e.target.value); //cambio al estado con lo que tipea el user
 
-    const createNewTime = () => {
-        return (<h2>{newTime}</h2>)
+    const createNewTime = (event) => {
+        setNewTime(input)
+        // setNewTime([...newTime, input]);
+        // return (<h2>{newTime}</h2>)
     }
 
 
@@ -18,13 +22,19 @@ function SelectTime() {
             <div>
                 <input
                     type="text"
-                    // value={newTime}
-                    onChange={updateNewTime}
+                    value={input}
+                    onChange={e => setInput(e.target.value)}
+                    // onChange={updateNewTime}
                     placeholder="add hours"
                 />
                 <button onClick={createNewTime}>
-                    Add
+                    Add Hours!!
             </button>
+                <h1>
+                    {
+                        newTime
+                    }
+                </h1>
                 {/* <h1>{newTime}</h1> */}
             </div>
             <h1>Favoritos</h1>
