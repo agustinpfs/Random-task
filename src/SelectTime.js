@@ -10,9 +10,9 @@ function SelectTime() {
     // const updateNewTime = e => setNewTime(e.target.value); //cambio al estado con lo que tipea el user
 
     const createNewTime = (event) => {
+        event.preventDefault();
         setNewTime(input)
-        // setNewTime([...newTime, input]);
-        // return (<h2>{newTime}</h2>)
+        setInput('');
     }
 
 
@@ -20,16 +20,18 @@ function SelectTime() {
         <div>
             <h1>¿Cuánto tiempo trabajarás hoy?</h1>
             <div>
-                <input
-                    type="text"
-                    value={input}
-                    onChange={e => setInput(e.target.value)}
-                    // onChange={updateNewTime}
-                    placeholder="add hours"
-                />
-                <button onClick={createNewTime}>
-                    Add Hours!!
-            </button>
+                <form>
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={e => setInput(e.target.value)}
+                        // onChange={updateNewTime}
+                        placeholder="add hours"
+                    />
+                    <button onClick={createNewTime}>
+                        Add Hours!!
+                    </button>
+                </form>
                 <h1>
                     {
                         newTime
