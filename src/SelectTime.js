@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Favorites from './Favorites'
 
 function SelectTime() {
 
@@ -44,10 +45,7 @@ function SelectTime() {
                 <p>
                     {
                         favorites.map(fav => (
-                            <p style={{ border: "2px dashed blue" }}>
-                                <h2>{fav}</h2>
-                                <button>edit</button>
-                            </p>
+                            <Favorites fav={fav} />
                         ))
                     }
                 </p>
