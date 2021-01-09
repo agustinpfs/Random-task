@@ -4,6 +4,12 @@ import { Modal, makeStyles, Button } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        margin: 'auto',
+        height: "max-content",
         width: 400,
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
@@ -13,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Favorites(props) {
+
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState();
