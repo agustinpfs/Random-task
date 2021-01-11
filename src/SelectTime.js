@@ -6,7 +6,13 @@ function SelectTime() {
     const [newTime, setNewTime] = useState('00:00');
     const [input, setInput] = useState('')
 
-    const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
+    // const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
+    const [favorites, setFavorites] = useState([
+        { id: "1", time: "3" },
+        { id: "2", time: "4" },
+        { id: "3", time: "6" },
+        { id: "4", time: "8" }
+    ]);
 
     // const updateNewTime = e => setNewTime(e.target.value); //cambio al estado con lo que tipea el user
 
@@ -15,6 +21,11 @@ function SelectTime() {
         setNewTime(input)
         setInput('');
     }
+
+    const updateFav = (inp, ide) =>
+        setFavorites(
+            favorites.map(fav => (fav.id === ide ? { ...fav, time: inp } : fav))
+        );
 
 
     return (
@@ -45,7 +56,7 @@ function SelectTime() {
                 <p>
                     {
                         favorites.map(fav => (
-                            <Favorites fav={fav} />
+                            <Favorites fav={fav} updateFav={updateFav} />
                         ))
                     }
                 </p>

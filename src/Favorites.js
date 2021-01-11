@@ -27,7 +27,8 @@ function Favorites(props) {
     // const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
 
 
-    const updateTodo = () => {
+    const updateFavorites = () => {
+        props.updateFav(input, props.fav.id)
         setOpen(false);
     }
 
@@ -39,8 +40,8 @@ function Favorites(props) {
             >
                 <div className={classes.paper}>
                     <h1>Edit Time</h1>
-                    <input placeholder={props.fav} value={input} onChange={event => setInput(event.target.value)} />
-                    <Button onClick={updateTodo}>Update time</Button>
+                    <input placeholder={props.fav.time} value={input} onChange={event => setInput(event.target.value)} />
+                    <Button onClick={updateFavorites}>Update time</Button>
                 </div>
             </Modal>
 
@@ -48,7 +49,7 @@ function Favorites(props) {
             {/* {console.log(props.fav.fav, 'aca fav')} */}
 
             <p style={{ border: "2px dashed blue" }}>
-                <h2>{props.fav}</h2>
+                <h2>{props.fav.time}</h2>
                 <button onClick={e => setOpen(true)}>EDIT</button>
             </p>
         </div>
