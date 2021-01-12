@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Favorites from './Favorites'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Favorites from './Favorites';
+import Dos from './Dos'
 
 function SelectTime() {
 
@@ -31,44 +33,54 @@ function SelectTime() {
 
 
     return (
-        <div>
-            <h1>¿Cuánto tiempo trabajarás hoy?</h1>
-            <div>
-                <form>
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={e => setInput(e.target.value)}
-                        // onChange={updateNewTime}
-                        placeholder="add hours"
-                    />
-                    <button onClick={createNewTime}>
-                        Add Hours!!
-                    </button>
-                </form>
-                <h1>
-                    {
-                        // const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-                        `${newTime < 10 ? '0' : ''}${newTime}:00 HORAS`
+        <Router>
+
+            <Route exact path="/" render={() => {
+                return (
+                    <div>
+                        <h1>¿Cuánto tiempo trabajarás hoy?</h1>
+                        <div>
+                            <form>
+                                <input
+                                    type="text"
+                                    value={input}
+                                    onChange={e => setInput(e.target.value)}
+                                    // onChange={updateNewTime}
+                                    placeholder="add hours"
+                                />
+                                <button onClick={createNewTime}>
+                                    Add Hours!!
+                        </button>
+                            </form>
+                            <h1>
+                                {
+                                    // const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+                                    `${newTime < 10 ? '0' : ''}${newTime}:00 HORAS`
 
 
-                    }
-                </h1>
-                {/* <h1>{newTime}</h1> */}
-            </div>
-            <h1>Favoritos</h1>
-            <div>
-                <p>
-                    {
-                        favorites.map(fav => (
-                            <Favorites fav={fav} updateFav={updateFav} useFav={useFav} />
-                        ))
-                    }
-                </p>
+                                }
+                            </h1>
+                            {/* <h1>{newTime}</h1> */}
+                        </div>
+                        <h1>Favoritos</h1>
+                        <div>
+                            <p>
+                                {
+                                    favorites.map(fav => (
+                                        <Favorites fav={fav} updateFav={updateFav} useFav={useFav} />
+                                    ))
+                                }
+                            </p>
 
-            </div>
-
-        </div>
+                        </div>
+                        {/* <button>SIGUIENTE</button> */}
+                        <Link to='/dos'>Siguiente</Link>
+                    </div>
+                )
+            }}>
+            </Route>
+            <Route path="/dos" component={Dos} />
+        </Router>
     )
 }
 
