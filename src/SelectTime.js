@@ -27,6 +27,8 @@ function SelectTime() {
             favorites.map(fav => (fav.id === ide ? { ...fav, time: inp } : fav))
         );
 
+    const useFav = (time) => setNewTime(time);
+
 
     return (
         <div>
@@ -56,7 +58,7 @@ function SelectTime() {
                 <p>
                     {
                         favorites.map(fav => (
-                            <Favorites fav={fav} updateFav={updateFav} />
+                            <Favorites fav={fav} updateFav={updateFav} useFav={useFav} />
                         ))
                     }
                 </p>

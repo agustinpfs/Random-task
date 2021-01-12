@@ -32,6 +32,10 @@ function Favorites(props) {
         setOpen(false);
     }
 
+    const useFavorite = () => {
+        props.useFav(props.fav.time)
+    }
+
     return (
         <div>
             <Modal
@@ -49,7 +53,7 @@ function Favorites(props) {
             {/* {console.log(props.fav.fav, 'aca fav')} */}
 
             <p style={{ border: "2px dashed blue" }}>
-                <h2>{props.fav.time}</h2>
+                <button onClick={useFavorite}>{props.fav.time}</button>
                 <button onClick={e => setOpen(true)}>EDIT</button>
             </p>
         </div>
