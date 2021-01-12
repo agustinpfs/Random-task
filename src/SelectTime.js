@@ -3,7 +3,7 @@ import Favorites from './Favorites'
 
 function SelectTime() {
 
-    const [newTime, setNewTime] = useState('00:00');
+    const [newTime, setNewTime] = useState('0');
     const [input, setInput] = useState('')
 
     // const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
@@ -48,7 +48,10 @@ function SelectTime() {
                 </form>
                 <h1>
                     {
-                        newTime
+                        // const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+                        `${newTime < 10 ? '0' : ''}${newTime}:00 HORAS`
+
+
                     }
                 </h1>
                 {/* <h1>{newTime}</h1> */}
