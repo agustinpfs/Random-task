@@ -53,7 +53,7 @@ function Favorites(props) {
             {/* {console.log(props.fav.fav, 'aca fav')} */}
 
             <p style={{ border: "2px dashed blue" }}>
-                <button onClick={useFavorite}>{props.fav.time}</button>
+                <button onClick={useFavorite}>{props.fav.time} HORAS</button>
                 <button onClick={e => setOpen(true)}>EDIT</button>
             </p>
         </div>
