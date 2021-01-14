@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Todo from './Todo';
+import Tres from "./Tres";
 
 
 
@@ -40,26 +42,38 @@ function Dos() {
     // arr = arr.filter(item => item !== value)
 
     return (
-        <div>
-            <h1>¿Qué harás?</h1>
-            <h2>¡Crea tus tareas!</h2>
-            <form>
-                <input value={input} placeholder="Escribe una tarea" onChange={event => setInput(event.target.value)} />
-                <button disabled={!input} onClick={addTodo}>
-                    Add Task
-                </button>
-            </form>
+        <Router>
 
-            <ul>
-                {
-                    todos.map(todo => (
-                        <Todo todo={todo} updateT={updateT} deleteT={deleteT} /> //cambio string por objeto(delete)
-                    ))
-                }
-            </ul>
+            <Route exact path="/dos" render={() => {
+                return (
+                    <div>
+                        <h1>¿Qué harás?</h1>
+                        <h2>¡Crea tus tareas!</h2>
+                        <form>
+                            <input value={input} placeholder="Escribe una tarea" onChange={event => setInput(event.target.value)} />
+                            <button disabled={!input} onClick={addTodo}>
+                                Add Task
+                    </button>
+                        </form>
 
-        </div>
+                        <ul>
+                            {
+                                todos.map(todo => (
+                                    <Todo todo={todo} updateT={updateT} deleteT={deleteT} /> //cambio string por objeto(delete)
+                                ))
+                            }
+                        </ul>
+                        <Link to='/tres'>Siguiente</Link>
+                    </div>
+                )
+
+            }}>
+
+
+            </Route>
+            <Route path="/tres" component={Tres} />
+        </Router>
     )
 }
 
-export default Dos
+export default Dos;
