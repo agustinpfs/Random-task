@@ -26,7 +26,18 @@ function Dos() {
         );
 
     }
+    const deleteT = (ide) => {
+        setTodos(
+            // todos.map(todo => (todo === ide ? todo = inp : todo))
+            todos.filter(todo => todo !== ide)
+        );
 
+    }
+    // let value = 3
+
+    // let arr = [1, 2, 3, 4, 5, 3]
+
+    // arr = arr.filter(item => item !== value)
 
     return (
         <div>
@@ -42,7 +53,7 @@ function Dos() {
             <ul>
                 {
                     todos.map(todo => (
-                        <Todo todo={todo} updateT={updateT} /> //cambio string por objeto(delete)
+                        <Todo todo={todo} updateT={updateT} deleteT={deleteT} /> //cambio string por objeto(delete)
                     ))
                 }
             </ul>

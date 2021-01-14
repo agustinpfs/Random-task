@@ -28,7 +28,7 @@ function Todo(props) {
     };
 
     const updateTodo = () => {
-        props.updateT(input, props.todo)
+        props.updateT(input, props.todo);
         // update todo with the new input text
 
         // db.collection('todos').doc(props.todo.id).set({
@@ -36,6 +36,10 @@ function Todo(props) {
         // }, { merge: true });
 
         setOpen(false);
+    }
+
+    const deleteTask = () => {
+        props.deleteT(props.todo);
     }
 
 
@@ -62,6 +66,8 @@ function Todo(props) {
             <div>
                 {props.todo}
                 <button onClick={e => setOpen(true)}>EDIT</button>
+                <button onClick={deleteTask}>delete</button>
+
             </div>
         </>
     )
