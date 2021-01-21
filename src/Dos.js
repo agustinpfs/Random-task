@@ -5,7 +5,7 @@ import Tres from "./Tres";
 
 
 
-function Dos() {
+function Dos(props) {
     const [todos, setTodos] = useState([]);
     const [input, setInput] = useState('');
 
@@ -71,7 +71,9 @@ function Dos() {
 
 
             </Route>
-            <Route path="/tres" component={Tres} />
+            <Route path="/tres" >
+                <Tres newTime={props.newTime} />
+            </Route>
         </Router>
     )
 }

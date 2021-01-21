@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import SelectTime from "./SelectTime";
 
-function Tres() {
+function Tres(props) {
     return (
         <div>
             <h1>Soy Tres!!!!</h1>
+            <h1>{props.newTime}</h1>
         </div>
     )
 }
 
-export default Tres
+export default Tres;

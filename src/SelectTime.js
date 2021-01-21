@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Favorites from './Favorites';
-import Dos from './Dos'
+import Dos from './Dos';
+import Tres from './Tres';
 
 function SelectTime() {
 
@@ -79,7 +80,10 @@ function SelectTime() {
                 )
             }}>
             </Route>
-            <Route path="/dos" component={Dos} />
+
+            <Route path="/dos" >
+                <Dos newTime={newTime} />
+            </Route>
 
         </Router>
     )

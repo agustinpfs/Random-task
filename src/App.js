@@ -5,9 +5,9 @@ import { BrowserRouter as Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Route path='/select'>
-        <SelectTime />
-      </Route>
+      {/* <Route path='/select'> */}
+      <SelectTime />
+      {/* </Route> */}
     </div>
   );
 }
