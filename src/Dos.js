@@ -13,11 +13,6 @@ function Dos(props) {
         // this will fire off when we click the button
         event.preventDefault();
 
-        // db.collection('todos').add({
-        //   todo: input,
-        //   timestamp: firebase.firestore.FieldValue.serverTimestamp() //marca la hora del servidor correcto
-        // })
-
         setTodos([...todos, input]);
         setInput('');
     }
@@ -30,16 +25,10 @@ function Dos(props) {
     }
     const deleteT = (ide) => {
         setTodos(
-            // todos.map(todo => (todo === ide ? todo = inp : todo))
             todos.filter(todo => todo !== ide)
         );
 
     }
-    // let value = 3
-
-    // let arr = [1, 2, 3, 4, 5, 3]
-
-    // arr = arr.filter(item => item !== value)
 
     return (
         <Router>

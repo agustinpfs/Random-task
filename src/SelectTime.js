@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Favorites from './Favorites';
 import Dos from './Dos';
-import Tres from './Tres';
 
 function SelectTime() {
 
     const [newTime, setNewTime] = useState('0');
     const [input, setInput] = useState('')
 
-    // const [favorites, setFavorites] = useState(['1', '2', '3', '4']);
     const [favorites, setFavorites] = useState([
         { id: "1", time: "3" },
         { id: "2", time: "4" },
@@ -55,13 +53,9 @@ function SelectTime() {
                             </form>
                             <h1>
                                 {
-                                    // const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
                                     `${newTime < 10 ? '0' : ''}${newTime}:00 HORAS`
-
-
                                 }
                             </h1>
-                            {/* <h1>{newTime}</h1> */}
                         </div>
                         <h1>Favoritos</h1>
                         <div>
@@ -74,7 +68,6 @@ function SelectTime() {
                             </p>
 
                         </div>
-                        {/* <button>SIGUIENTE</button> */}
                         <Link to='/dos'>Siguiente</Link>
                     </div>
                 )

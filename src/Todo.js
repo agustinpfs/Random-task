@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, List, ListItem, ListItemText, makeStyles, Button } from '@material-ui/core';
-// import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-// import './Todo.css';
-// import db from './firebase';
+import { Modal, makeStyles, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -16,38 +13,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 function Todo(props) {
 
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState();
 
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
     const updateTodo = () => {
         props.updateT(input, props.todo);
-        // update todo with the new input text
-
-        // db.collection('todos').doc(props.todo.id).set({
-        //     todo: input
-        // }, { merge: true });
-
         setOpen(false);
     }
 
     const deleteTask = () => {
         props.deleteT(props.todo);
     }
-
-
-
-    // const updateFavorites = () => {
-    //     props.updateFav(input, props.fav.id)
-    //     setOpen(false);
-    // }
 
 
     return (
@@ -73,4 +52,4 @@ function Todo(props) {
     )
 }
 
-export default Todo
+export default Todo;

@@ -1,5 +1,4 @@
 import React from 'react';
-import SelectTime from "./SelectTime";
 
 function Tres(props) {
     return (
