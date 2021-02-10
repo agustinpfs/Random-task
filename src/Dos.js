@@ -61,7 +61,7 @@ function Dos(props) {
 
             </Route>
             <Route path="/tres" >
-                <Tres newTime={props.newTime} />
+                <Tres newTime={props.newTime} todos={todos} />
             </Route>
         </Router>
     )
